@@ -39,7 +39,7 @@ Careful! Check the voltage capabilities of your display - mine could only handle
 
 # How to get started
 
-- Put the font files as well as the yaml file into your esphome folder
+- Put the font files as well as the yaml file into your esphome folder (feel free to use your own choice of fonts - make sure you update the yaml in that case)
 - Make the appropriate changes to your yaml file. Substitute values for:
   - Device name
   - Static IP details. If you dont want to set a static IP, comment out this line as well as the lines for manual_ip under the wifi section!
