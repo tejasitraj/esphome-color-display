@@ -74,3 +74,8 @@ template:
         state: >
           {{ states.weather.smhi_home.attributes.forecast.1.condition }}
 ``` 
+# My next steps
+
+- Designing and 3D printing a case
+- Adding a physical button to allow me to turn the display on and off
+- Thinking about what more fun information I could add to the display - alarm status? heating status? Alerts? It's all possible!
