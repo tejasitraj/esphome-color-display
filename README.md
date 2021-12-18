@@ -45,5 +45,32 @@ Careful! Check the voltage capabilities of your display - mine could only handle
   - Static IP details. If you dont want to set a static IP, comment out this line as well as the lines for manual_ip under the wifi section!
   - Entities for an internal temperature sensor and an external temperature sensor
   - An entity for the current weather condition - I use SMHI in Sweden, you could select your local weather service
-  - Entities to show the forecast low and forecast high for today and tomorrow. See forecast section in [my other post](https://github.com/tejasitraj/esphome-tiny-display) for more details.
+  - Entities to show the forecast low and forecast high for today and tomorrow. See forecast section in [my other post](https://github.com/tejasitraj/esphome-tiny-display) for a description, and see code below which I use to create these entities in my configuration.yaml
 - Compile and upload to your hardware!
+
+# Forecast entities
+
+Essentially, in order to create separate specific entities for today's and tomorrow's forecast, I use template sensors in my configuration.yaml. Here's my code.
+
+```
+template:
+  - sensor:
+      - name: Todays Forecast High
+        state: >
+          {{ states.weather.smhi_home.attributes.forecast.0.temperature }}
+      - name: Todays Forecast Low
+        state: >
+          {{ states.weather.smhi_home.attributes.forecast.0.templow }}
+      - name: Todays Forecast Condition
+        state: >
+          {{ states.weather.smhi_home.attributes.forecast.0.condition }}
+      - name: Tomorrows Forecast High
+        state: >
+          {{ states.weather.smhi_home.attributes.forecast.1.temperature }}
+      - name: Tomorrows Forecast Low
+        state: >
+          {{ states.weather.smhi_home.attributes.forecast.1.templow }}
+      - name: Tomorrows Forecast Condition
+        state: >
+          {{ states.weather.smhi_home.attributes.forecast.1.condition }}
+``` 
