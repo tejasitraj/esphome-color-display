@@ -37,6 +37,8 @@ Careful! Check the voltage capabilities of your display - mine could only handle
 | BLK | D32 |
 | MIS | D12 |
 
+My display does not have a cs pin. If yours does, do connect it do a GPIO pin and modify the code accordingly.
+
 # How to get started
 
 - Put the font files as well as the yaml file into your esphome folder (feel free to use your own choice of fonts - make sure you update the yaml in that case)
