@@ -181,7 +181,8 @@ light:
 display:
   - platform: ili9341
     model: TFT 2.4
-    cs_pin: GPIO26
+    #I don't have a cs pin on my display, if you do then include the following line and make sure you connect the pin.
+    #cs_pin: GPIO26
     dc_pin: GPIO25
     led_pin: GPIO32  ### see note below ###
     reset_pin: GPIO33
