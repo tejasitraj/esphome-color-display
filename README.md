@@ -1,6 +1,9 @@
 # esphome-ILI9341-color-display
 My implementation of an ILI9341 3.2" TFT LCD Colour Display with an ESP32 in ESPHome.
-![20211218_191244](https://user-images.githubusercontent.com/14822776/146652289-75712550-9f35-47fb-b28b-b9f255a79355.jpg)
+| Display | Case |
+| ------- | ---- |
+|![20211218_191244](https://user-images.githubusercontent.com/14822776/146652289-75712550-9f35-47fb-b28b-b9f255a79355.jpg)|![20220110_204306](https://user-images.githubusercontent.com/14822776/148830231-92cea7b7-5aaf-461c-955b-43cfda535ac8.jpg)|
+
 
 This is an easy project to get started! My design skills arent great, but this lays the foundations for anything I'd want to implement in the future. I got started from the official [ILI9341 documentation on esphome](https://esphome.io/components/display/ili9341.html). 
 
@@ -76,8 +79,13 @@ template:
         state: >
           {{ states.weather.smhi_home.attributes.forecast.1.condition }}
 ``` 
+# Case
+I worked with my friend Magnus Skärström to design a case for the display and the ESP32. There is also an opening in the case for a 6mm push button, which I plan to use soon. 
+I personally don't see the need to make the case unnecessarily slim, since this restricts the ability to use dupont connector cables and pin headers and forces us to solder directly on the board instead. Which could be good - but it isn't beginner friendly. 
+![20220110_204300](https://user-images.githubusercontent.com/14822776/148831429-6695eb61-2b24-4fb1-9644-d7cfc2979302.jpg)
+![20220110_204306](https://user-images.githubusercontent.com/14822776/148831448-10025b7e-e2c3-44b1-a7cf-08be931f21fb.jpg)
+
 # My next steps
 
-- Designing and 3D printing a case
 - Adding a physical button to allow me to turn the display on and off
 - Thinking about what more fun information I could add to the display - alarm status? heating status? Alerts? It's all possible!
